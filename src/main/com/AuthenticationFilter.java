@@ -4,6 +4,8 @@ public class AuthenticationFilter {
     private String name;
     
     private String password;
+    
+    private String token;
 
     public String getPassword() {
 		return password;
