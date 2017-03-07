@@ -1,12 +1,11 @@
 package main.com;
 
 public class AuthenticationFilter {
-
-   private String password;
-
     private String name;
+    
+    private String password;
 
-	public String getPassword() {
+    public String getPassword() {
 		return password;
 	}
 
@@ -14,7 +13,12 @@ public class AuthenticationFilter {
 		this.password = password;
 	}
     
-    
+	public String getName() {
+		return name;
+	}
 
+	public void setName(String name) {
+		this.name = name;
+	}
 
 }
