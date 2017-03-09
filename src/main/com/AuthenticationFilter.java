@@ -5,6 +5,7 @@ public class AuthenticationFilter {
     private String password;
     private String token;
     private String key;
+    private boolean isNewUser;
 
     public String getPassword() {
 		return password;
