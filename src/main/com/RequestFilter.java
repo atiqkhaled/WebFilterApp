@@ -15,7 +15,22 @@ import javax.servlet.http.HttpServletRequest;
   Author     : atiqkhaled
 */
 public class RequestFilter implements Filter {
-	private FilterConfig fc =  null;    
+	private FilterConfig fc =  null;
+	private String dbPass = "jamil";
+	private String dbUserName = "jamil";
+	
+	public String getDbPass() {
+		return dbPass;
+	}
+	public void setDbPass(String dbPass) {
+		this.dbPass = dbPass;
+	}
+	public String getDbUserName() {
+		return dbUserName;
+	}
+	public void setDbUserName(String dbUserName) {
+		this.dbUserName = dbUserName;
+	}
 
 	public void doFilter(ServletRequest req, ServletResponse resp,  
 	  FilterChain chain) throws IOException, ServletException {  
@@ -23,6 +38,7 @@ public class RequestFilter implements Filter {
 	    String pass = "";
 	    String msg = "";
 	    String path = "";
+	    
 	    HttpServletRequest request = (HttpServletRequest)  req; 
 	    name = req.getParameter("name");
 	    pass = req.getParameter("pass");
@@ -30,7 +46,7 @@ public class RequestFilter implements Filter {
 	    // intialize request attribute map. 
 	    req.setAttribute("msg", msg);
 	    // check authentication...
-	    if(!("jamil".equalsIgnoreCase(name) && "jamil".equalsIgnoreCase(pass))) {
+	    if(!(getDbUserName().equalsIgnoreCase(name) && getDbPass().equalsIgnoreCase(pass))) {
 	    	if(path.equalsIgnoreCase("/welcome")) {
 	    	   msg = "not matched";
 	    	   req.setAttribute("msg", msg);
