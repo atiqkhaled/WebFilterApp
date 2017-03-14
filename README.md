@@ -50,7 +50,7 @@ Your input parameter been filtered but not authentic !
 ```
 
 
-###Licence
+### License
 This project is of course public and author is **atiqkhaled**.
 
 
