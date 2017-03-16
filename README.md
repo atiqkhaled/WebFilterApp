@@ -1,7 +1,7 @@
 # WebFilterApp
 **Project URL :** *http://localhost:8080/WebFilterApp*
 
-This Project is for research purpose for understanding how servlet filter works. WebFilterApp is about checking credentials of user and displaying welcome page if user is authentic.
+The key thing of this project is understanding how servlet filter works. WebFilterApp application is about checking credentials of user and displaying welcome page if user is authentic.
 
 Following points are key elements of this Application :
 
@@ -26,14 +26,14 @@ In this application filter class (RequestFilter.java) intercepts request sending
 
 ```
    if(!("jamil".equalsIgnoreCase(name) && "jamil".equalsIgnoreCase(pass))) {
-	     if(path.equalsIgnoreCase("/welcome")) {
-	    	   msg = "not matched";
-	    	   req.setAttribute("msg", msg);
-	     }  
-	     req.getRequestDispatcher("login.jsp").forward(req, resp);
-	  } 	
-	  // sends request to next resource
-	  chain.doFilter(req, resp);
+	 if(path.equalsIgnoreCase("/welcome")) {
+	      msg = "not matched";
+	      req.setAttribute("msg", msg);
+	 }  
+	 req.getRequestDispatcher("login.jsp").forward(req, resp);
+    }
+    // sends request to next resource
+    chain.doFilter(req, resp);
 ```
 
 Login interface defined in login.jsp file whcih deployed in servlet container. Jsp enginge compile this file into servlet class and content of this file written on response object which later sent to the browser to present html for end user. Following code snippet showing alert message for invalid credentials :
